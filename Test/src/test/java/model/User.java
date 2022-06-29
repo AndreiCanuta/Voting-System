@@ -3,8 +3,14 @@ package model;
 public class User {
     private String email;
     private String username;
-    private String password;
     private boolean vote;
+
+    public User(String email) {
+        this.email = email;
+        this.vote = false;
+        String[] emailSplit = email.split("@");
+        this.username = emailSplit[0];
+    }
 
     public String getEmail() {
         return email;
@@ -20,14 +26,6 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public boolean isVote() {
