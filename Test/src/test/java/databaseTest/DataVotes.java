@@ -1,5 +1,6 @@
 package databaseTest;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class DataVotes {
@@ -7,7 +8,7 @@ public class DataVotes {
     public Map<String, Object> data;
 
     private DataVotes() {
-        data = null;
+        data = new HashMap<String, Object>();
     }
 
     public static DataVotes getInstance() {

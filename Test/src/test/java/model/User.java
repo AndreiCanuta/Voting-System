@@ -35,4 +35,13 @@ public class User {
     public void setVote(boolean vote) {
         this.vote = vote;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "email='" + email + '\'' +
+                ", username='" + username + '\'' +
+                ", vote=" + vote +
+                '}';
+    }
 }

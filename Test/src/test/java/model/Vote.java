@@ -24,4 +24,12 @@ public class Vote {
     public void setVote(boolean vote) {
         this.vote = vote;
     }
+
+    @Override
+    public String toString() {
+        return "Vote{" +
+                "username='" + username + '\'' +
+                ", vote=" + vote +
+                '}';
+    }
 }
