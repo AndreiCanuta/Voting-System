@@ -14,7 +14,8 @@ public class AppFunctions {
         System.out.println(voteController.addVote("andi.canuta"));
         System.out.println(voteController.removeVote("andi.canuta"));
         System.out.println(voteController.removeVote("andi.canuta"));
-
+        System.out.println(userController.removeUser("user.user@metro.digital"));
+        System.out.println(userController.removeUser("andi.canuta@gmail.com"));
     }
 
 }

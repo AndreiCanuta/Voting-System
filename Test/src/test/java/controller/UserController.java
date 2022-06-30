@@ -21,5 +21,17 @@ public class UserController {
         return "User " + username + " added";
     }
 
+    public String removeUser (String email) {
+        String[] split = email.split("@");
+        String username = split[0];
+
+        if(checkUser(username)) {
+            userService.removeUser(email);
+            return "User " + username + " removed";
+        }
+
+        return "User " + username + " does not exist";
+    }
+
 
 }

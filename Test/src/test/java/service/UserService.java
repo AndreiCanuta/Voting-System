@@ -14,4 +14,8 @@ public class UserService {
         userRepository.addUser(email);
     }
 
+    public void removeUser (String email) {
+        userRepository.removeUser(email);
+    }
+
 }

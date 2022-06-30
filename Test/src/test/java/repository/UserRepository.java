@@ -11,8 +11,13 @@ public class UserRepository {
         return dataUsers.data.containsKey(username);
     }
 
-    public void addUser(String email) {
+    public void addUser (String email) {
         User user = new User (email);
         dataUsers.data.put(user.getUsername(), user);
+    }
+
+    public void removeUser (String email) {
+        User user = new User (email);
+        dataUsers.data.remove(user.getUsername());
     }
 }
