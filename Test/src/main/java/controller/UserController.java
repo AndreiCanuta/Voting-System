@@ -25,4 +25,12 @@ public class UserController {
         Room room = roomService.getRoom(roomLink);
         return mapperService.toDto(userService.joinRoom(id, room));
     }
+
+    public UserDto vote (UserDto userDto, String roomLink, int vote) {
+        int id = mapperService.getIdFromDto(userDto);
+        Room room = roomService.getRoom(roomLink);
+        UserDto returnUserDto =  mapperService.toDto(userService.vote(id, room, vote));
+        roomService.updateAverageVote(room);
+        return returnUserDto;
+    }
 }

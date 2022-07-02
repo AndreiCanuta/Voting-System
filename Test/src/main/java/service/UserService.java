@@ -20,4 +20,8 @@ public class UserService {
         return userRepository.joinRoom(id, room);
     }
 
+    public User vote (int id, Room room, int vote) {
+        return userRepository.vote(id, room, vote);
+    }
+
 }

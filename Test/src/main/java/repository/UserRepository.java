@@ -35,5 +35,13 @@ public class UserRepository {
         return userJoin;
     }
 
+    public User vote (int id, Room room, int vote) {
+        for (User u : room.getUserList()) {
+            if (u.getID() == id) {
+                u.setVote(vote);
+            }
+        }
+        return dataUsers.data.get(id);
+    }
 
 }

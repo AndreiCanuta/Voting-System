@@ -11,6 +11,9 @@ public class VotingApplication {
         controller.createRoom(u1, "room1");
         controller.createRoom(u1, "room2");
         controller.joinRoom(u2, "room1_1");
+        controller.vote(u2, "room1_1", 5);
+        controller.vote(u1, "room1_1", 3);
+        controller.vote(u1, "room2_1", 8);
         System.out.println(u1.toString());
         System.out.println(u2.toString());
     }
