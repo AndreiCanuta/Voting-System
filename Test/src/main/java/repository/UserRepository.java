@@ -26,18 +26,12 @@ public class UserRepository {
         return user;
     }
 
-    public User joinRoom (int id, String roomLink) {
+    public User joinRoom (int id, Room room) {
         User userJoin = dataUsers.data.get(id);
-        String[] split = roomLink.split("_");
-        User userMod = dataUsers.data.get(Integer.parseInt(split[1]));
+        User auxUser = new User (userJoin.getName(), id, "Player");
+        userJoin.getRoomList().add(room);
+        room.getUserList().add(auxUser);
 
-        for (Room r : userMod.getRoomList()) {
-            if (r.getName().equals(split[0])) {
-                userJoin.getRoomList().add(r);
-                User auxUser = new User (userJoin.getName(), id, "Player");
-                r.getUserList().add(auxUser);
-            }
-        }
         return userJoin;
     }
 

@@ -1,6 +1,7 @@
 package service;
 
 import dto.UserDto;
+import model.Room;
 import model.User;
 import repository.UserRepository;
 
@@ -15,8 +16,8 @@ public class UserService {
         return userRepository.createRoom(id, roomName);
     }
 
-    public User joinRoom (int id, String roomLink) {
-        return userRepository.joinRoom(id, roomLink);
+    public User joinRoom (int id, Room room) {
+        return userRepository.joinRoom(id, room);
     }
 
 }

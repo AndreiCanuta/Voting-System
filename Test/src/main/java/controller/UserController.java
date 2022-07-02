@@ -2,11 +2,14 @@ package controller;
 
 import dto.UserDto;
 import mapper.MapperService;
+import model.Room;
+import service.RoomService;
 import service.UserService;
 
 public class UserController {
-    private UserService userService = new UserService();
-    private MapperService mapperService = new MapperService();
+    private final UserService userService = new UserService();
+    private final MapperService mapperService = new MapperService();
+    private final RoomService roomService = new RoomService();
 
     public UserDto createUser (String name) {
         return mapperService.toDto(userService.createUser(name));
@@ -19,6 +22,7 @@ public class UserController {
 
     public UserDto joinRoom (UserDto userDto, String roomLink) {
         int id = mapperService.getIdFromDto(userDto);
-        return mapperService.toDto(userService.joinRoom(id, roomLink));
+        Room room = roomService.getRoom(roomLink);
+        return mapperService.toDto(userService.joinRoom(id, room));
     }
 }
