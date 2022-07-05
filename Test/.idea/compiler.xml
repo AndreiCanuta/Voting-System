@@ -9,5 +9,8 @@
         <module name="Test" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="VotingApp" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
