@@ -5,7 +5,7 @@ import entity.Cookie;
 public class CookieGenerator {
 
 
-    static Cookie generateCookie(int userId)
+    public Cookie generateCookie(int userId)
     {
 
         String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"

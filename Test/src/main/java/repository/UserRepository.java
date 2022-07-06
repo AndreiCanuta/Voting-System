@@ -1,6 +1,7 @@
 package repository;
 
 import database.Database;
+import entity.Cookie;
 import entity.User;
 
 public class UserRepository {
@@ -20,4 +21,24 @@ public class UserRepository {
         User user = new User (name, hashedPassword);
         database.users.add(user);
     }
+
+    public boolean checkCredentials(String name, String password) {
+        String hashedPassword = String.valueOf(password.hashCode());
+        for (User u : database.users) {
+            if (u.getName().equals(name) && u.getPassword().equals(hashedPassword)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int getUserId (String name) {
+        for (User u : database.users) {
+            if (u.getName().equals(name)) {
+                return u.getId();
+            }
+        }
+        return 0;
+    }
+
 }
