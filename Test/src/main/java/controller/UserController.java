@@ -19,21 +19,14 @@ public class UserController {
                 try {
                     userService.registerUser(request.getUsername(), request.getPassword());
                 } catch (UsernameUnavailableException e) {
-                    return e.getMessage().toString();
+                    return e.getMessage();
                 }
             }
         }catch (PasswordNotMatchingException e) {
-            return e.getMessage().toString();
+            return e.getMessage();
         }
         return "200.OK";
     }
 
-    public String loginUser (LoginRequest loginRequest) {
-        try {
-            userService.loginUser(loginRequest.getUsername(), loginRequest.getPassword());
-        } catch (CredentialException e) {
-            return e.getMessage().toString();
-        }
-    }
 
 }
